@@ -1,7 +1,9 @@
 import Item from "./Item.jsx";
 import style from "../css/grocerylist.module.css";
+import propTypes from "prop-types";
 
 export default function GroceryListDisplay({groceryItem, groceryList, setGroceryList}) {
+    // console.log(groceryItem);
     const sortedGroceryList = groceryList.sort((a,b) => Number(a.done) - Number(b.done));
     return (
         <div className={`col-sm-12 col-lg-6 col-md-8 ${style.listContainer}`}>
@@ -20,4 +22,10 @@ export default function GroceryListDisplay({groceryItem, groceryList, setGrocery
             }
         </div>
     );
+}
+GroceryListDisplay.propTypes = {
+    groceryItem:propTypes.object.isRequired,
+    groceryList:propTypes.array.isRequired,
+    setGroceryList:propTypes.func.isRequired,
+
 }

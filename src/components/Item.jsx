@@ -1,4 +1,5 @@
 import style from "../css/grocerylist.module.css"
+import propTypes from "prop-types";
 
 export default function Item({groceryItem,groceryList,setGroceryList}) {
 
@@ -15,11 +16,11 @@ export default function Item({groceryItem,groceryList,setGroceryList}) {
         );
     }
 
-    const className = groceryItem.done === true ? style.item : "";
+    const checkItem = groceryItem.done === true ? style.item : "";
     return (
         <div className={style.listItem}>
             <span
-                className={className}
+                className={checkItem}
                 onClick={() => handleClick(groceryItem.name)}
             >
                 {groceryItem.name}
@@ -30,7 +31,14 @@ export default function Item({groceryItem,groceryList,setGroceryList}) {
             >
                 <i className={"bi bi-patch-minus"}></i> Remove
             </button>
-            <hr className={style.base}/>
+            <hr style={checkItem ? {border:"1px solid lightgreen"} : {border:"1px solid red"}}/>
         </div>
     );
+}
+
+Item.propTypes = {
+    groceryItem:propTypes.object.isRequired,
+    groceryList:propTypes.array.isRequired,
+    setGroceryList:propTypes.func.isRequired,
+
 }

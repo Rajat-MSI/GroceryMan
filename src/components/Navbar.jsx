@@ -1,5 +1,6 @@
 import style from "../css/header.module.css";
 import Banner from "./Banner.jsx";
+import propTypes from "prop-types";
 export default function Navbar({appName, groceryList}) {
     return (
         <div>
@@ -13,4 +14,8 @@ export default function Navbar({appName, groceryList}) {
             </nav>
         </div>
     );
+}
+Navbar.propTypes = {
+    appName:propTypes.string.isRequired,
+    groceryList:propTypes.array.isRequired,
 }

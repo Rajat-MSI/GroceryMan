@@ -1,15 +1,32 @@
 import style from "../css/form.module.css";
+import propTypes from "prop-types";
+import Swal from "sweetalert2";
 
-export default function Form({groceryItem, setGroceryItem ,groceryList,setGroceryList}) {
+export default function Form({groceryItem, setGroceryItem, groceryList, setGroceryList}) {
 
-        return (
+    const itemNames = groceryList.map((item) => item.name.toUpperCase())
+    console.log(itemNames)
+    let itemValue = "";
+    return (
         <>
             <div className={`${style.formContainer}`}>
                 <form
                     onSubmit={(e) => {
                         e.preventDefault();
-                        setGroceryList([...groceryList, groceryItem]);
-                        setGroceryItem({name: "", done: false});
+                        itemValue += groceryItem.name;
+                        if (itemNames.includes(itemValue.toUpperCase())) {
+                            Swal.fire({
+                                title: 'Error!',
+                                text: 'Item already added in your list',
+                                icon: 'error',
+                                confirmButtonText: 'OK',
+                                confirmButtonColor: '#0d6efd'
+                            })
+                            setGroceryItem({name: "", done: false});
+                        } else {
+                            setGroceryList([...groceryList, groceryItem]);
+                            setGroceryItem({name: "", done: false});
+                        }
                     }}
                 >
                     <div className={"input-group"}>
@@ -37,4 +54,10 @@ export default function Form({groceryItem, setGroceryItem ,groceryList,setGrocer
         </>
 
     );
+}
+Form.propTypes = {
+    groceryItem: propTypes.object.isRequired,
+    groceryList: propTypes.array.isRequired,
+    setGroceryList: propTypes.func.isRequired,
+    setGroceryItem: propTypes.func.isRequired,
 }

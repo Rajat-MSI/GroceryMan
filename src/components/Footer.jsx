@@ -7,12 +7,12 @@ export default function Footer() {
         <div>
             <footer className={`${style.footer} fixed-bottom text-center`}>
                 <div className="container p-4">
-                    <section className="mb-2">
+                    <section >
                         <p>
                             Crafted with ❤️ By Rajat Sharma
                         </p>
                     </section>
-                    <div className="text-center p-3">
+                    <div className="text-center">
                         © {year} Copyright:
                         <a
                             href="https://www.github.com/Rajat-MSI"

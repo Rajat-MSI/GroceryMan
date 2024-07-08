@@ -1,4 +1,5 @@
 import style from "../css/banner.module.css";
+import propTypes from "prop-types";
 
 export default function Banner({groceryList}) {
     const completedList = groceryList.filter((item) => item.done === true);
@@ -15,4 +16,8 @@ export default function Banner({groceryList}) {
             </div>
         </div>
     );
+}
+
+Banner.propTypes = {
+    groceryList:propTypes.array.isRequired
 }
