@@ -3,7 +3,7 @@ import style from "../css/grocerylist.module.css";
 import propTypes from "prop-types";
 
 export default function GroceryListDisplay({groceryItem, groceryList, setGroceryList}) {
-    // console.log(groceryItem);
+    console.log(groceryItem);
     const sortedGroceryList = groceryList.sort((a,b) => Number(a.done) - Number(b.done));
     return (
         <div className={`col-sm-12 col-lg-6 col-md-8 ${style.listContainer}`}>
