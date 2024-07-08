@@ -1,0 +1,14 @@
+.header {
+    padding:20px;
+    background-color: rgb(26, 28, 33) !important;
+    box-shadow: 0 4px 6px rgba(0,0,0,50%);
+}
+.brand
+{
+    font-size: 1.8rem;
+    text-align: center !important;
+}
+.brand span
+{
+    cursor: pointer;
+}

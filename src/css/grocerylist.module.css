@@ -1,0 +1,27 @@
+.listContainer
+{
+    padding:40px 20px;
+    border-radius: 8px;
+    box-shadow: 0 4px 6px rgba(0,0,0,50%);
+    background-color:  rgb(26, 28, 33) !important;
+    height: 60%;
+    margin: 30px auto 190px;
+}
+.listItem
+{
+    padding: 5px 0;
+    cursor: pointer;
+    user-select: none;
+
+
+}
+.base{
+    border: 1px solid #9f9f9f;
+}
+.item {
+    text-decoration: line-through;
+}
+.deleteItem{
+    float: right;
+    margin-top: -5px;
+}

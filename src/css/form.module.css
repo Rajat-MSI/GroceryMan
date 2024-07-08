@@ -1,0 +1,23 @@
+.formContainer
+{
+    padding:40px 20px;
+    margin:30px auto;
+    border-radius: 8px;
+    box-shadow: 0 4px 6px rgba(0,0,0,50%);
+    background-color:  rgb(26, 28, 33) !important;
+}
+.formInput
+{
+    background-color:  rgb(26, 28, 33) !important;
+    border: none !important;
+    padding:0 !important;
+    color:white !important;
+    box-shadow: none !important;
+    font-size: 1.5em;
+    cursor: pointer;
+
+}
+.formInput::placeholder
+{
+    color: white !important;
+}
