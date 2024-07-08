@@ -5,7 +5,6 @@ import Swal from "sweetalert2";
 export default function Form({groceryItem, setGroceryItem, groceryList, setGroceryList}) {
 
     const itemNames = groceryList.map((item) => item.name.toUpperCase())
-    console.log(itemNames)
     let itemValue = "";
     return (
         <>
